@@ -2145,3 +2145,12 @@ node_modules/yallist/LICENSE
 node_modules/yallist/package.json
 node_modules/yallist/README.md
 node_modules/yallist/yallist.js
+node_modules/debug/.coveralls.yml
+node_modules/debug/.eslintrc
+node_modules/debug/.npmignore
+node_modules/debug/.travis.yml
+node_modules/debug/component.json
+node_modules/debug/karma.conf.js
+node_modules/debug/Makefile
+node_modules/debug/src/debug.js
+node_modules/debug/src/inspector-log.js
