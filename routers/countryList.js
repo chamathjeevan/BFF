@@ -28,6 +28,6 @@ router.get('/countryList', function(req, res , next) {
         return res.send(results)
     })
 })
-
+module.exports = router;
 
 
