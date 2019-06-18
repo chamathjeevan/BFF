@@ -1,14 +1,13 @@
 var express = require('express');
 const router = express.Router();
-var dbConnection = require('./database')
+var request = require('request');
 
 router.get('/material/Types', function(req, res, next) {
-    dbConnection.query('SELECT * FROM MaterialTypes ', function(error,results, fields) {
-        if (error) return next(error);
-        if (!results || results.length == 0 ) return res.status(404).send()
-        return res.send(results)
-    
-    });
+request('http://localhost:3010/45634/materialtype/', function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred and handle it
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        res.send(body)
+  });
 });
 
 module.exports = router;
