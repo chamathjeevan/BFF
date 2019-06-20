@@ -1,35 +1,20 @@
 var express = require('express');
 const router = express.Router();
-var dbConnection = require('./database')
-const Joi = require('@hapi/joi');
+var request = require('request');
+var endpoints = require('./endpoints');
 
-
-router.get('/materialTypes', function(req, res, next) {
-    dbConnection.query('SELECT * FROM MaterialTypes', function(error, results, fields) {
-       if (error) return next (error);
-       if (!results||results.length == 0) return res.status(404).send()
-       return res.send(results)
-
-    })
+router.get('/material/Types', function(req, res, next) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_MaterialType);
+    request(url, function (error, response, body) {
+      res.status(response.statusCode).send(body);
+    });
 })
 
-router.get ('/materialTypes/:id', function(req, res, next) {
-    let id = req.params.id;
-    dbConnection.query('SELECT * FROM MaterialTypes WHERE ID', function(error, results, fields) {
-        if (error) return next(error);
-        if (!results||results.length ==0) return res.status(404).send()
-        return res.status(results)
-    })
-})
-
-const fetch = require("node-fetch");
-
-router.get('/materialTypes/:id', function(req, res, next) {
-    let id = req.params.uid;
-    fetch('localhost:3000/:id').then(res => res.json()).then(function(data){
-        returned = data.json();
-        console.log(returned);
-    })
+router.get('/material/Types/:id', function(req, res, next) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_MaterialType,req.params.id);
+    request(url, function (error, response, body) {
+        res.status(response.statusCode).send(body);
+    });
 })
 
 module.exports = router;

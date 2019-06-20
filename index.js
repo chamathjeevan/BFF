@@ -7,8 +7,15 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-const clientRoutes = require('./routers/material.js')
-app.use(clientRoutes);
+const clientTypesRoutes = require('./routers/client')
+app.use(clientTypesRoutes);
+
+const materialTypesRoutes = require('./routers/materialType')
+app.use(materialTypesRoutes);
+
+const countriesRoutes = require('./routers/countries')
+app.use(countriesRoutes);
+
 
 var intPostStartUp = function intPostStartUp() {
     // bind error middleware
