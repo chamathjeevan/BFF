@@ -13,7 +13,7 @@ router.get('/material', function (req, res, next) {
     });
 });
 
-router.get('/material', function (req, res, next) {
+router.get('/material/:id', function (req, res, next) {
   var url = endpoints.Url(endpoints.Endpoints.Material_Material);
   request(url, function (error, response, body) {
       if (error) {
@@ -22,6 +22,7 @@ router.get('/material', function (req, res, next) {
       return res.status(200).send(body)
     });
 });
+
 
 
 module.exports = router;
