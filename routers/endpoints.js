@@ -26,7 +26,7 @@ module.exports.Endpoints = Endpoints;
 
 module.exports.Url = function (endpoint, ids) {
 
-    var clientID = "1001"
+    var clientID = "1"
     var url =  Domain(endpoint) + endpoint.replace(":Client_ID", clientID);
 
     if (ids !== null && typeof ids !== 'undefined') {

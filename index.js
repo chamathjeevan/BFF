@@ -7,6 +7,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+const materialsTypesRoutes = require('./routers/material')
+app.use(materialsTypesRoutes);
+
 const clientTypesRoutes = require('./routers/client')
 app.use(clientTypesRoutes);
 
