@@ -1,7 +1,7 @@
 var express = require('express');
-const router = exprss.Router();
-var request = require('/endpoints');
-var endpoints = require ('/endpoints');
+const router = express.Router();
+var request = require('request');
+var endpoints = require ('./endpoints');
 
 router.get ('/getIncoterm/', function(req, res, next) {
     var url = endpoints.Url(endpoints.Endpoints.Company_Incoterm);

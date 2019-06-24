@@ -1,7 +1,7 @@
 var express  =  require('express');
 const router =  express.Router();
 var request = require('request');
-var endpoints = require ('/endpoints');
+var endpoints = require ('./endpoints');
 
 router.get('/getClient/', function(req, res, next) {
     var url = endpoints.Url(endpoints.Endpoints.Company_GetClient);

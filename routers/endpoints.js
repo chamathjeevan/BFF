@@ -11,7 +11,7 @@ const Endpoints = {
     Material_Supplier: '/:Client_ID/supplier/',
     Material_TaxMap: '/:Client_ID/taxmap/',
     Material_TradeAgreementType: '/:Client_ID/tradeagreementtype/',
-    Material_Mesure: '/:Client_ID/mesure/',
+    Material_Measures: '/:Client_ID/mesure/',
     Company_Affiliated: '/affiliated',
     Company_Bank: '/bank',
     Company_Client: '/client',
@@ -48,7 +48,7 @@ var Domain = function (endpoint) {
         case Endpoints.Material_Supplier:
         case Endpoints.Material_TaxMap:
         case Endpoints.Material_TradeAgreementType:
-        case Endpoints.Material_Mesure:
+        case Endpoints.Material_Measures:
 
         case Endpoints.Company_GetBankList:
         case Endpoints.Company_GetClient:
