@@ -19,6 +19,15 @@ app.use(materialTypesRoutes);
 const countriesRoutes = require('./routers/countries')
 app.use(countriesRoutes);
 
+const getBankListRoutes =  require('./routers/getBankList')
+app.use(getBankListRoutes);
+
+const getClientRoutes =  require('/routers/getClient')
+app.use(getClientRoutes);
+
+const getIncotermRoutes = require('/routers/getIncoterm')
+app.use(getIncotermRoutes);
+
 
 var intPostStartUp = function intPostStartUp() {
     // bind error middleware
