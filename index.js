@@ -25,8 +25,11 @@ app.use(getBankListRoutes);
 const getClientRoutes =  require('./routers/getClient')
 app.use(getClientRoutes);
 
-const getIncotermRoutes = require('/routers/getIncoterm')
+const getIncotermRoutes = require('./routers/getIncoterm')
 app.use(getIncotermRoutes);
+
+const MeasuresRoutes = require('./routers/measures')
+app.use(MeasuresRoutes);
 
 
 var intPostStartUp = function intPostStartUp() {
