@@ -13,7 +13,7 @@ router.get('/material', function (req, res, next) {
     });
 });
 
-router.get('/material', function (req, res, next) {
+router.get('/material/:Id', function (req, res, next) {
   var url = endpoints.Url(endpoints.Endpoints.Material_Material);
   request(url, function (error, response, body) {
       if (error) {
