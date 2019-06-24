@@ -18,5 +18,22 @@ router.get('/material/Type/:id', function(req, res, next) {
     });
 })
 
-module.exports = router;
+router.post('/material/Type/', function (req, res) {
 
+    var url = endpoints.Url(endpoints.Endpoints.Material_MaterialType);
+
+    request.post({
+        headers: {'content-type' : 'application/json'},
+        url:     url,
+        json:   true,
+        form:    req.body
+      }, function(error, response, body){
+            
+            if(!error){
+                res.status(response.statusCode).send(error);
+            }else{
+                res.status(response.statusCode).send(body);
+            }
+    });
+});
+module.exports = router;
