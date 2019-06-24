@@ -22,7 +22,7 @@ app.use(countriesRoutes);
 const getBankListRoutes =  require('./routers/getBankList')
 app.use(getBankListRoutes);
 
-const getClientRoutes =  require('/routers/getClient')
+const getClientRoutes =  require('./routers/getClient')
 app.use(getClientRoutes);
 
 const getIncotermRoutes = require('/routers/getIncoterm')
