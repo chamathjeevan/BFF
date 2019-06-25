@@ -4,9 +4,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
-
 
 app.use((req, res, next) => {
   res.setHeader('Content-Type', 'application/json');
@@ -19,36 +18,37 @@ app.use(clientTypesRoutes);
 const materialTypesRoutes = require('./routers/materialType')
 app.use(materialTypesRoutes);
 
-const mesureRoutes =  require('./routers/mesure')
+const mesureRoutes = require('./routers/mesure')
 app.use(mesureRoutes);
 
 const countriesRoutes = require('./routers/countries')
 app.use(countriesRoutes);
 
-const getBankListRoutes =  require('./routers/getBankList')
+const getBankListRoutes = require('./routers/getBankList')
 app.use(getBankListRoutes);
 
+const materialsRoutes = require('./routers/material')
+app.use(materialsRoutes);
 
+const getClientRoutes = require('./routers/getClient')
+app.use(getClientRoutes);
 
-//const materialsRoutes = require('./routers/material')
-//app.use(materialsRoutes);
+const getIncotermRoutes = require('./routers/getIncoterm')
+app.use(getIncotermRoutes);
 
-//const getClientRoutes =  require('/routers/getClient')
-//app.use(getClientRoutes);
-
-//const getIncotermRoutes = require('/routers/getIncoterm')
-//app.use(getIncotermRoutes);
+const MeasuresRoutes = require('./routers/measures')
+app.use(MeasuresRoutes);
 
 
 var intPostStartUp = function intPostStartUp() {
-    // bind error middleware
-    app.use(_ErrorMiddleware.ErrorMiddleware);
-  };
-  
-  exports.intPostStartUp = intPostStartUp;
+  // bind error middleware
+  app.use(_ErrorMiddleware.ErrorMiddleware);
+};
+
+exports.intPostStartUp = intPostStartUp;
 
 // set port
-app.listen(3000, function() {
-    console.log('Node app is running on port 3000');
+app.listen(3000, function () {
+  console.log('Node app is running on port 3000');
 });
 module.exports = app;

@@ -9,4 +9,5 @@ router.get('/Company/clients', function(req, res, next) {
         res.status(response.statusCode).send(body);
     });
 })
+
 module.exports = router;

@@ -1,10 +1,10 @@
 var express = require('express');
-const router = exprss.Router();
-var request = require('/endpoints');
-var endpoints = require ('/endpoints');
+const router = express.Router();
+var request = require('request');
+var endpoints = require ('./endpoints');
 
 router.get ('/getIncoterm/', function(req, res, next) {
-    var url = endpoints.url(endpoints.Endpoints.Company_Incoterm);
+    var url = endpoints.Url(endpoints.Endpoints.Company_Incoterm);
     request(url, function(error, response, body) {
         res.status(response.statusCode).send(body);
 

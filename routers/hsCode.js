@@ -27,7 +27,7 @@ router.put('/hsCode/:hscode', function(req, res) {
         return res.send(results);
 
     } )
-})
+}) 
 
 router.post('/hsCode/:hscode', function(req, res) {
     dbConnection.query('INSERT INTO Hs SET = ? ', req.body, function (error, results, fields) {
