@@ -19,14 +19,19 @@ app.use(clientTypesRoutes);
 const materialTypesRoutes = require('./routers/materialType')
 app.use(materialTypesRoutes);
 
-const materialsRoutes = require('./routers/material')
-app.use(materialsRoutes);
+const mesureRoutes =  require('./routers/mesure')
+app.use(mesureRoutes);
 
 const countriesRoutes = require('./routers/countries')
 app.use(countriesRoutes);
 
 const getBankListRoutes =  require('./routers/getBankList')
 app.use(getBankListRoutes);
+
+
+
+//const materialsRoutes = require('./routers/material')
+//app.use(materialsRoutes);
 
 //const getClientRoutes =  require('/routers/getClient')
 //app.use(getClientRoutes);
