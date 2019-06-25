@@ -24,20 +24,17 @@ app.use(mesureRoutes);
 const countriesRoutes = require('./routers/countries')
 app.use(countriesRoutes);
 
-const getBankListRoutes = require('./routers/getBankList')
+const getBankListRoutes = require('./routers/bannk')
 app.use(getBankListRoutes);
 
 const materialsRoutes = require('./routers/material')
 app.use(materialsRoutes);
 
-const getClientRoutes = require('./routers/getClient')
-app.use(getClientRoutes);
+const clientRoutes = require('./routers/client')
+app.use(clientRoutes);
 
-const getIncotermRoutes = require('./routers/getIncoterm')
-app.use(getIncotermRoutes);
-
-const MeasuresRoutes = require('./routers/measures')
-app.use(MeasuresRoutes);
+const incotermRoutes = require('./routers/Incoterm')
+app.use(incotermRoutes);
 
 
 var intPostStartUp = function intPostStartUp() {

@@ -3,38 +3,61 @@ const router = express.Router();
 var request = require('request');
 var endpoints = require('./endpoints');
 
-router.get('/hsCode/:hscode' , function(req, res, next) {
+router.get('/material/hscode' , function(req, res, next) {
     var url = endpoints.Url(endpoints.Endpoints.Material_HS);
     request(url, function( error, response, body) {
-        res.status(response.statusCode).send(body);
+        if(!error){
+              res.status(50).send(error);
+          }else{
+              res.status(response.statusCode).send(body);
+          }
 
     })
 })
 
-router.get('/hsCode/:hscode' , function(req, res, next) {
-    var url = endpoints.Url(endpoints.Endpoints.Material_HS,req.params.hscode);
+router.get('/material/hscode/:Id' , function(req, res, next) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_HS,req.params.Id);
     request(url, function(error, response, body) {
-        res.status(response.statusCode).send(body);
+        if(!error){
+              res.status(500).send(error);
+          }else{
+              res.status(response.statusCode).send(body);
+          }
     })
 })
 
 
-router.put('/hsCode/:hscode', function(req, res) {
-    let hsCode = req.body;
-    dbConnection.query('UPDATE Hs SET HsCode = ?, ClientName = ?, Priority = ?', [Hs.HsCode, Hs.ClientName, Hs.Priority] , function(error, results, fields) {
-        if (error) return next(error);
-        if (!results || results.affectedRows == 0) res.status(400).send();
-        return res.send(results);
-
-    } )
-}) 
-
-router.post('/hsCode/:hscode', function(req, res) {
-    dbConnection.query('INSERT INTO Hs SET = ? ', req.body, function (error, results, fields) {
-        if (error) return next (error);
-        return res.status(201).send();
-    })
-})
+router.post('/material/hscode', function (req, res) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_HS);
+    request.post({
+        headers: {'content-type' : 'application/json'},
+        url:     url,
+        json:   true,
+        form:    req.body
+      }, function(error, response, body){
+            if(!error){
+                res.status(500).send(error);
+            }else{
+                res.status(response.statusCode).send(body);
+            }
+    });
+  });
+  
+  router.put('/material/hscode', function (req, res) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_Material);
+    request.put({
+        headers: {'content-type' : 'application/json'},
+        url:     url,
+        json:   true,
+        form:    req.body
+      }, function(error, response, body){
+            if(!error){
+                res.status(500).send(error);
+            }else{
+                res.status(response.statusCode).send(body);
+            }
+    });
+  });
 
 module.exports = router;
 

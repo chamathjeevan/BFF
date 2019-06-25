@@ -27,9 +27,22 @@ router.get('/material/mesure/:id', function(req, res, next) {
 
 router.post('/material/mesure/', function (req, res) {
     var url = endpoints.Url(endpoints.Endpoints.Material_Mesure);
-    console.error(url);
-    console.error('X1');
     request.post({
+        headers: {'content-type' : 'application/json'},
+        url:     url,
+        json:   true,
+        form:    req.body
+      }, function(error, response, body){
+            if(!error){
+                res.status(500).send(error);
+            }else{
+                res.status(response.statusCode).send(body);
+            }
+    });
+});
+router.put('/material/mesure/', function (req, res) {
+    var url = endpoints.Url(endpoints.Endpoints.Material_Mesure);
+    request.put({
         headers: {'content-type' : 'application/json'},
         url:     url,
         json:   true,

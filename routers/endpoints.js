@@ -50,9 +50,6 @@ var Domain = function (endpoint) {
         case Endpoints.Material_TradeAgreementType:
         case Endpoints.Material_Measures:
         case Endpoints.Material_Mesure:
-        case Endpoints.Company_GetBankList:
-        case Endpoints.Company_GetClient:
-        case Endpoints.Company_GetIncoterm:
             return MATERIAL_SERVICE_DOMAIN;
         default:
           return COMPANY_SERVICE_DOMAIN
