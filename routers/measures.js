@@ -7,10 +7,9 @@ router.get('/measures', function(req, res, next) {
     var url = endpoints.Url(endpoints.Endpoints.Material_Measures);
     request(url, function (error, response, body) {
         if (error) {
-            return res.status(response.statusCode).send(error);
+            return res.status(500).send(error);
         }
-
-        return res.status(200).send(body)
+        return res.status(response.statusCode).send(body)
     })
 })
 
@@ -18,10 +17,10 @@ router.get('/measures/:ID', function(req, res, next) {
     var url = endpoints.Url(endpoints.Endpoints.Material_Measures);
     request(url, function (error, response, body) {
         if (error) {
-            return res.status(response.statusCode).send(error);
+            return res.status(500).send(error);
 
         }
-        return res.status(200).send(body)
+        return res.status(response.statusCode).send(body)
     })
 })
 

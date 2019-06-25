@@ -9,9 +9,9 @@ router.get('/material', function (req, res, next) {
 
   request(url, function (error, response, body) {
       if (error) {
-        return res.status(response.statusCode).send(error);   
+        return res.status(500).send(error);   
       }
-     return res.status(200).send(body)
+     return res.status(response.statusCode).send(body)
     });
 });
 
@@ -19,9 +19,9 @@ router.get('/material/:Id', function (req, res, next) {
   var url = endpoints.Url(endpoints.Endpoints.Material_Material);
   request(url, function (error, response, body) {
       if (error) {
-        return res.status(response.statusCode).send(error);   
+        return res.status(500).send(error);   
       }
-     return res.status(200).send(body)
+     return res.status(response.statusCode).send(body)
     });
 });
 
